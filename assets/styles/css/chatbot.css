@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Faster+One&family=Salsa&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Acme|Alegreya|Alegreya+Sans|Anton|Archivo|Archivo+Black|Archivo+Narrow|Arimo|Arvo|Asap|Asap+Condensed|Bitter|Bowlby+One+SC|Bree+Serif|Cabin|Cairo|Catamaran|Crete+Round|Crimson+Text|Cuprum|Dancing+Script|Dosis|Droid+Sans|Droid+Serif|EB+Garamond|Exo|Exo+2|Faustina|Fira+Sans|Fjalla+One|Francois+One|Gloria+Hallelujah|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Julee|Karla|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Mada|Manuale|Maven+Pro|Merriweather|Merriweather+Sans|Montserrat|Montserrat+Subrayada|Mukta+Vaani|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Caption|PT+Sans+Narrow|PT+Serif|Pacifico|Passion+One|Pathway+Gothic+One|Play|Playfair+Display|Poppins|Questrial|Quicksand|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Ropa+Sans|Rubik|Saira|Saira+Condensed|Saira+Extra+Condensed|Saira+Semi+Condensed|Sedgwick+Ave|Sedgwick+Ave+Display|Shadows+Into+Light|Signika|Slabo+27px|Source+Code+Pro|Source+Sans+Pro|Spectral|Titillium+Web|Ubuntu|Ubuntu+Condensed|Varela+Round|Vollkorn|Work+Sans|Yanone+Kaffeesatz|Zilla+Slab|Zilla+Slab+Highlight");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bungee&family=Bungee+Inline&family=Bungee+Shade&family=Carter+One&family=Faster+One&family=Fredoka+One&family=Lobster&family=Monoton&family=Orbitron&family=Ramaraja&family=Rammetto+One&family=Rampart+One&family=Russo+One&family=Sancreek&family=Secular+One&family=Sigmar+One&family=Vast+Shadow&family=Zen+Tokyo+Zoo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=Alegreya+Sans+SC&family=Federo&family=Pattaya&family=Roboto+Condensed:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+.main_heading {
+  font-family: "Alfa Slab One", cursive;
+  font-family: "Bungee", cursive;
+  font-family: "Bungee Inline", cursive;
+  font-family: "Bungee Shade", cursive;
+  font-family: "Carter One", cursive;
+  font-family: "Faster One", cursive;
+  font-family: "Fredoka One", cursive;
+  font-family: "Lobster", cursive;
+  font-family: "Monoton", cursive;
+  font-family: "Orbitron", sans-serif;
+  font-family: "Ramaraja", serif;
+  font-family: "Rammetto One", cursive;
+  font-family: "Rampart One", cursive;
+  font-family: "Russo One", sans-serif;
+  font-family: "Sancreek", cursive;
+  font-family: "Secular One", sans-serif;
+  font-family: "Sigmar One", cursive;
+  font-family: "Vast Shadow", cursive;
+  font-family: "Zen Tokyo Zoo", cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  flex-wrap: wrap;
+}
+
+html {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/images/background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: fixed;
+}
+html body {
+  max-width: 2200px;
+  width: 100%;
+}
+
+.red_alert {
+  background-color: rgba(255, 0, 0, 0.575);
+  color: white;
+  font-size: 9px;
+  padding: 3px;
+  border-radius: 10px;
+  font-weight: bolder;
+  position: relative;
+  top: -5px;
+  left: -10px;
+  animation: red_alert 0.5s infinite linear;
+}
+
+.download_links {
+  display: flex;
+  flex-direction: column;
+  color: #45070e;
+  font-size: 18px;
+  padding-left: 100px;
+  min-height: 300px;
+}
+.download_links a {
+  color: #45070e;
+  margin-top: 5px;
+}
+.download_links i {
+  color: #45070e;
+  font-size: 18px;
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 450px) {
+  .download_links {
+    padding-left: 30px;
+    font-family: 20px;
+  }
+  .download_links a {
+    font-size: 15px;
+  }
+}
+.info_panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatbot-handler {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  background: linear-gradient(90deg, rgb(177, 128, 25) 0%, rgb(239, 218, 102) 48%, rgb(177, 128, 25) 100%);
+  width: 65px;
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid #45070e;
+  z-index: 100;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(67, 71, 92, 0.704);
+}
+.chatbot-handler img {
+  width: 55px;
+}
+.chatbot-handler i {
+  display: none;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+@keyframes animate-chatbot {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px) scaleY(100%);
+  }
+}
+.chatbox {
+  display: none;
+  position: fixed;
+  right: 24px;
+  bottom: 121px;
+  height: 470px;
+  width: 308px;
+  background-color: rgb(66, 50, 50);
+  background-color: white;
+  background-size: 60%;
+  z-index: 99;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px 1px rgb(7, 7, 7);
+  border: 1px solid #d3b143;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.chatbox ::-webkit-scrollbar {
+  width: 2px;
+}
+.chatbox ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.chatbox ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+.chatbox ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.chatbox .heading {
+  background: rgb(128, 0, 0);
+  background: linear-gradient(90deg, rgb(177, 128, 25) 0%, rgb(239, 218, 102) 48%, rgb(177, 128, 25) 100%);
+  display: flex;
+  flex-direction: row;
+  color: black;
+}
+.chatbox .heading > img {
+  width: 35px;
+  margin: 16px 0px 16px 30px;
+}
+.chatbox .heading section {
+  padding-left: 10px;
+  margin: 16px 0px;
+}
+.chatbox .heading section h2 {
+  font-size: 15px;
+  font-weight: 600;
+}
+.chatbox .heading section p {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 11px;
+}
+.chatbox .heading section p img {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+.chatbox .texts {
+  width: 100%;
+  height: 340px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 2px 8px;
+}
+.chatbox .texts > div {
+  position: relative;
+  font-size: 13px;
+  color: black;
+  padding: 3px 7px;
+  border-radius: 13px;
+  background-color: #eaeaea;
+  max-width: 220px;
+  margin: 5px;
+}
+.chatbox .texts > div > img {
+  width: 30px;
+}
+.chatbox .texts > div .btn {
+  background: linear-gradient(90deg, rgb(177, 128, 25) 0%, rgb(239, 218, 102) 48%, rgb(177, 128, 25) 100%);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  margin: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 5px;
+}
+.chatbox .texts > div div, .chatbox .texts > div p {
+  font-size: 12px;
+}
+.chatbox .texts > div div:nth-child(1), .chatbox .texts > div p:nth-child(1) {
+  font-weight: bolder;
+  font-size: 12px;
+}
+.chatbox .texts > div div:nth-child(2), .chatbox .texts > div p:nth-child(2) {
+  font-size: 10px;
+}
+.chatbox .texts .chatbot_txt {
+  border-top-left-radius: 0px;
+  text-align: center;
+}
+.chatbox .texts .usr_txt {
+  border-top-right-radius: 0px;
+  position: relative;
+  left: 80px;
+  text-align: center;
+}
+.chatbox .inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+  padding: 5px 0px;
+}
+.chatbox .inputs input {
+  width: 240px;
+  padding: 5px 10px;
+  outline: none;
+  font-size: 12px;
+  border: none;
+  border-radius: 3px;
+}
+.chatbox .inputs button {
+  background: linear-gradient(90deg, rgb(177, 128, 25) 0%, rgb(239, 218, 102) 48%, rgb(177, 128, 25) 100%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-left: 6px;
+}
+.chatbox .inputs button i {
+  font-size: 17px;
+}
+
+@media screen and (max-width: 550px) {
+  .chatbot-handler {
+    right: 10px;
+    bottom: 10px;
+  }
+  .chatbox {
+    right: 10px;
+    bottom: 79px;
+  }
+}
+
+/*# sourceMappingURL=chatbot.css.map */

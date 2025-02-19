@@ -1,0 +1,57 @@
+@import './utilss.scss';
+
+
+.admin-dashboard{
+    @include display_as_row();
+    flex-wrap: nowrap;
+    // width:98vw;
+    height:400px;
+    margin:10px 20px;
+    // padding:5px 20px;
+    border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    // border:2px solid $blue;
+    // max-width: 90vw;
+    background-color: $sky-white;
+    .sidebar{
+        @include display_as_column();
+        width:200px;    
+        background-color: $blue;
+        button{
+            background:$golden-gradient;
+            cursor: pointer;
+            padding:6px;
+            outline:none;
+            border:none;
+
+            border-top: 2px solid $sky-white;
+            &:nth-child(1){
+                border:0px;
+            }
+        }
+        
+
+    }
+
+    section{
+        &:nth-child(2){
+            overflow-y: scroll;
+            width: 100%;
+        }
+    }
+
+    table{
+        caption{
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 16px;
+            padding:5px;
+        }
+        tr{
+            width:100%;
+        }
+    }
+}
+
+

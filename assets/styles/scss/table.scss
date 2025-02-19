@@ -1,0 +1,71 @@
+@import './utilss.scss';
+
+body{
+    // background-color: red  !important;
+    background-image: url('https://img.freepik.com/free-photo/nature-colorful-landscape-dusk-cloud_1203-5705.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: center center;
+}
+
+
+table.house{
+    margin:20px auto;
+    // border:2px solid #033779;
+    caption{
+        font-weight: bold;
+    }
+    // max-width:400px;
+    max-width: 99%;
+    position: relative;
+    // max-width: 100%;
+    top:-330px;
+    tr{
+        width:100%;
+        @include display_as_row_center();
+        flex:1;
+        border:1px solid white; 
+        color:white;
+        width:400px;
+        text-align: center;
+        td{
+            min-width: 100px;
+            font-size:14px;
+            padding:5px;
+            @include display_as_column_center();
+            flex-direction: column-reverse;
+            flex:1;
+            img{
+                width: 150px;
+                height:150px;
+                border-radius: 50%;
+                border: 5px solid white;    
+            }
+            p{
+                @include display_as_row_center();
+            }
+
+            &:nth-child(1){
+                // color: $yellow;
+            }
+
+        }
+        // background-color: #1451a1;
+    }
+}
+
+
+table canvas{
+    position: relative;
+    left:-200px;
+}
+
+@media screen and (max-width: 450px) {
+    table tr{
+        width:300px !important;
+    }
+    table tr td img{
+        width:100px !important;
+        height:100px !important;
+    }
+}

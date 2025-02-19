@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comming soon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        body{
+            overflow: hidden;
+        }
+        .countdown{
+            width:100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgb(34,193,195);
+            background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,108,253,1) 100%);
+            
+            background-size: cover;
+        }
+
+        h2{
+            font-size:50px;
+            color:white;
+            margin: 5px auto;
+        }
+        h3,p{
+            font-size:30px;
+            margin: 5px auto;
+
+        }
+
+        .countdown section{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-weight: bold;
+
+        }
+        section span{
+            font-size:50px;
+            color:white;
+            margin:0px 5px;
+        }
+
+        .countdown section div {
+            background-color: rgb(255, 255, 255);
+            font-size:40px;
+            width:95px;
+            height:95px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 2px 2px 3px 5px rgba(0, 116, 116, 0.432);
+        }
+        h5{
+            margin:50px 0px;
+        }
+
+        @media screen and (max-width:550px){
+            .countdown h2{
+                font-size:35px;
+            }
+
+            .countdown section span{
+                font-size:25px;
+            }
+
+            .countdown section div {
+                background-color: white;
+                font-size:25px;
+                width:60px;
+                height:60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 15px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                box-shadow: 2px 2px 3px 5px rgba(0, 116, 116, 0.432);
+            
+            }
+
+            
+        }
+
+    </style>
+    <div class="countdown">
+        <img width="70px" src="https://rkinternationalschool.net/assets/images/LOGO.png" alt="">
+        <h2>Coming Soon in </h2>
+        <section id="demo"></section>
+        <h5>Our website is under construction. <br/> For any enquiry contact on Mob No. 085878 20850 or rkischool40@gmail.com</h5>
+    </div>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 1, 2023 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = `<div>${hours}h</div><span>:</span><div>${minutes}m</div><span>:</span><div>${seconds}s</div>`
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+    
+</body>
+</html>

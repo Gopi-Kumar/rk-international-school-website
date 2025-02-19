@@ -1,0 +1,117 @@
+@import './utilss.scss';
+
+.yellow{
+    color:$yellow;
+    text-shadow: 1px 1px 3px $drop-shadow;
+    animation: blink 1s infinite linear;
+}
+
+@keyframes blink {
+    0%{
+        color:$blue;
+    }
+    25%{
+        color:black;
+    }
+    50%{
+        color:$sky-white;
+    }
+    75%{
+        color:black;
+    }
+    100%{
+        color:$blue;
+    }
+
+}
+
+
+.fa-star{
+    color:$blue;
+    font-size:5px;
+    position: relative;
+    top:-5px;
+}
+
+
+
+form{
+    width:100vw !important;
+    *{
+        font-size:14px;
+
+    }
+    option{
+        &:hover{
+            background-color: $blue;
+            color:white;     
+        }
+    }
+
+    td{
+        // font-size:16px !important;
+    }
+
+    .columnlabel span, .capitalize{
+        font-size:14px;
+    }
+
+
+    #savebtn{
+        background: $golden-gradient;
+        padding:10px 40px;
+        border:none;
+        outline: none;
+        font-weight: bold;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+}
+
+
+.career{
+    display:flex;
+    margin:20px auto;
+    width:100%;
+    /* align-items:center; */
+    justify-content:center;
+    flex-wrap:wrap;
+
+}
+
+.career section{
+    padding:30px;
+    width:300px;
+    
+}
+
+.career li{
+    line-height:30px;
+}
+
+.career section:nth-child(1){
+    background-color:#74d6d3;
+}
+.career section:nth-child(2){
+    background-color:gray;
+}
+
+#d {
+    width:100%;
+    background-color:#b5b4b1;
+    padding:15px;
+}
+
+.red_txt{
+    color:#b8140b;
+    font-weight:bold;
+}
+#p{
+    padding:10px 20px;
+}
+
+@media screen and (max-width:500px) {
+    #p, .career, #d{
+        font-size:13px;
+    }
+}
