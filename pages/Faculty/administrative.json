@@ -1,0 +1,60 @@
+{
+    "about": {
+        "title": "Administrative Staff",
+        "description": "Administrative team of RKIS knows the pulse of the students very well as it is seasoned with such skillful and well equipped employees. Their role is critical co-ordinating the interaction of the school with the outside world and ensures that units and functions that are crucial to the working of any school – Infrastructure, Medical Support, Security, Transport, Vendor Management etc. run smoothly. Along with the teaching staff, they also contribute to the upbringing of the students by ensuring that things are in place and working, so that the academic transactions and the mentoring of a child – which are the two core activities of any school – do go on without any interruptions. This team is the backbone of whole system."
+    },
+    "departments": [
+        {
+            "id": "it",
+            "button_text": "Information & Technology",
+            "members": [
+                
+                {
+                    "name": "Mr. G K Kaushik",
+                    "designation": "IT Executive",
+                    "qualification": "BCA",
+                    "image": "../../assets/images/staff-images/gopi.jpg",
+                    "description": "Mr. Gopi is responsible for the technical advancements in the school which he is always keen to do. He is very hard working, polite and humble but is the owner of hidden knowledge which is witnessed time to time while updating the school technically whenever and wherever required. He is certified Five Star Coder at Hackerrank."
+                }
+            ]
+        },
+        {
+            "id": "ac",
+            "button_text": "Accounts",
+            "members": [
+                {
+                    "name": "Mr. Ashvani Kumar",
+                    "designation": "Accountant",
+                    "image": "../../assets/images/staff-images/ashwani.jpg",
+                    "description": "Mr. Ashvani serves as the Accountant at R K International School. Beyond his financial acumen, he possesses a captivating personality that effortlessly connects with students, creating an open and inviting atmosphere for discussion and problem-solving. Mr. Ashvani's dedication is evident in his proactive approach to taking on student-centric assignments, always aiming to showcase R K International School's excellence in the field of education. His willingness to embrace tasks that benefit the students reflects his commitment to their growth and success within the school. Aside from his financial expertise, Mr. Ashvani has a passion for photography. He seizes every opportunity to capture the charm and vitality of our students through his lens, preserving precious moments that resonate with the vibrant spirit of our school community. In both his professional and personal pursuits, Mr. Ashvani leaves an indelible mark, enriching the school's environment and contributing to its continued success."
+                }
+            ]
+        },
+        {
+            "id": "e",
+            "button_text": "Estate",
+            "members": [
+                {
+                    "name": "Mr. Sanuj",
+                    "designation": "Estate",
+                    "image": "../../assets/images/staff-images/sanuj.jpg",
+                    "additional_responsibility": "Transport In-charge",
+                    "description": "Mr. Sanuj serves as the Estate Manager and also takes on the important role of Transport In-charge. In his capacity as Estate Manager, he ensures the upkeep of our school's facilities. Simultaneously, as Transport In-charge, he guarantees the safety and efficiency of our students' transportation. His dedication and multitasking abilities make him an indispensable asset to our school."
+                }
+            ]
+        },
+   
+        {
+            "id": "foe",
+            "button_text": "Front Desk Executive",
+            "members": [
+                {
+                    "name": "Ms. Soni",
+                    "designation": "Front Office Executive",
+                    "image": "../../assets/images/staff-images/soni.jpg",
+                    "description": "I'm Ms. Soni, and I currently hold the position of Front Office Executive at R K International School. With two decades of dedicated service in this role, I bring a wealth of experience and expertise to the school's administrative team. As the Front Office Executive, I am the first point of contact for students, parents, and visitors who walk through our school's doors. Over the years, I've honed my skills in providing a warm and welcoming environment, ensuring that everyone feels valued and attended to from the moment they arrive. My responsibilities encompass a wide range of tasks, from managing phone calls, emails, and inquiries to scheduling appointments and maintaining an organized and efficient front desk. I take pride in my ability to handle diverse queries and requests with professionalism and grace, ensuring that information is disseminated accurately and promptly. In my role, I work closely with teachers, administrative staff, and management to facilitate effective communication and streamline administrative processes. Additionally, I play a pivotal role in assisting parents with enrollment, registration, and addressing any concerns they may have regarding their children's education. My two decades of experience have not only allowed me to develop strong organizational and multitasking skills but have also given me a deep understanding of the school's culture and values. I am committed to upholding the school's reputation for excellence and ensuring that every interaction at the front desk reflects our commitment to providing the best educational experience possible"
+                }
+            ]
+        }
+    ]
+}

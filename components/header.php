@@ -1,7 +1,7 @@
 <?php 
     session_start();
-     $_SERVER["root_directory"] = "";
-    //$_SERVER["root_directory"] = "/rkis/";
+    //  $_SERVER["root_directory"] = "";
+    $_SERVER["root_directory"] = "/School Website";
 
 
     $root_directory = $_SERVER["root_directory"];

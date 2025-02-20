@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Faster+One&family=Salsa&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Acme|Alegreya|Alegreya+Sans|Anton|Archivo|Archivo+Black|Archivo+Narrow|Arimo|Arvo|Asap|Asap+Condensed|Bitter|Bowlby+One+SC|Bree+Serif|Cabin|Cairo|Catamaran|Crete+Round|Crimson+Text|Cuprum|Dancing+Script|Dosis|Droid+Sans|Droid+Serif|EB+Garamond|Exo|Exo+2|Faustina|Fira+Sans|Fjalla+One|Francois+One|Gloria+Hallelujah|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Julee|Karla|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Mada|Manuale|Maven+Pro|Merriweather|Merriweather+Sans|Montserrat|Montserrat+Subrayada|Mukta+Vaani|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Caption|PT+Sans+Narrow|PT+Serif|Pacifico|Passion+One|Pathway+Gothic+One|Play|Playfair+Display|Poppins|Questrial|Quicksand|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Ropa+Sans|Rubik|Saira|Saira+Condensed|Saira+Extra+Condensed|Saira+Semi+Condensed|Sedgwick+Ave|Sedgwick+Ave+Display|Shadows+Into+Light|Signika|Slabo+27px|Source+Code+Pro|Source+Sans+Pro|Spectral|Titillium+Web|Ubuntu|Ubuntu+Condensed|Varela+Round|Vollkorn|Work+Sans|Yanone+Kaffeesatz|Zilla+Slab|Zilla+Slab+Highlight");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bungee&family=Bungee+Inline&family=Bungee+Shade&family=Carter+One&family=Faster+One&family=Fredoka+One&family=Lobster&family=Monoton&family=Orbitron&family=Ramaraja&family=Rammetto+One&family=Rampart+One&family=Russo+One&family=Sancreek&family=Secular+One&family=Sigmar+One&family=Vast+Shadow&family=Zen+Tokyo+Zoo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=Alegreya+Sans+SC&family=Federo&family=Pattaya&family=Roboto+Condensed:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+.main_heading {
+  font-family: "Alfa Slab One", cursive;
+  font-family: "Bungee", cursive;
+  font-family: "Bungee Inline", cursive;
+  font-family: "Bungee Shade", cursive;
+  font-family: "Carter One", cursive;
+  font-family: "Faster One", cursive;
+  font-family: "Fredoka One", cursive;
+  font-family: "Lobster", cursive;
+  font-family: "Monoton", cursive;
+  font-family: "Orbitron", sans-serif;
+  font-family: "Ramaraja", serif;
+  font-family: "Rammetto One", cursive;
+  font-family: "Rampart One", cursive;
+  font-family: "Russo One", sans-serif;
+  font-family: "Sancreek", cursive;
+  font-family: "Secular One", sans-serif;
+  font-family: "Sigmar One", cursive;
+  font-family: "Vast Shadow", cursive;
+  font-family: "Zen Tokyo Zoo", cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  flex-wrap: wrap;
+}
+
+html {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/images/background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: fixed;
+}
+html body {
+  max-width: 2200px;
+  width: 100%;
+}
+
+.red_alert {
+  background-color: rgba(255, 0, 0, 0.575);
+  color: white;
+  font-size: 9px;
+  padding: 3px;
+  border-radius: 10px;
+  font-weight: bolder;
+  position: relative;
+  top: -5px;
+  left: -10px;
+  animation: red_alert 0.5s infinite linear;
+}
+
+.download_links {
+  display: flex;
+  flex-direction: column;
+  color: #45070e;
+  font-size: 18px;
+  padding-left: 100px;
+  min-height: 300px;
+}
+.download_links a {
+  color: #45070e;
+  margin-top: 5px;
+}
+.download_links i {
+  color: #45070e;
+  font-size: 18px;
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 450px) {
+  .download_links {
+    padding-left: 30px;
+    font-family: 20px;
+  }
+  .download_links a {
+    font-size: 15px;
+  }
+}
+.info_panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.teaching_staff, .non_teaching_staff {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.teaching_staff img, .non_teaching_staff img {
+  max-height: 200px;
+  border: 5px solid #d3b143;
+  border-radius: 10px;
+}
+.teaching_staff .about, .non_teaching_staff .about {
+  flex: 1;
+  height: 583px;
+  overflow: scroll;
+}
+.teaching_staff .about section, .non_teaching_staff .about section {
+  display: none;
+}
+.teaching_staff .about section:first-child, .non_teaching_staff .about section:first-child {
+  display: block;
+}
+.teaching_staff .about section > div, .non_teaching_staff .about section > div {
+  padding: 20px 50px;
+}
+.teaching_staff .about section > div h2, .non_teaching_staff .about section > div h2 {
+  color: #45070e;
+  font-size: 16px;
+}
+.teaching_staff .about section .description, .non_teaching_staff .about section .description {
+  text-align: justify;
+}
+.teaching_staff .about section > section, .non_teaching_staff .about section > section {
+  display: flex;
+  flex-direction: row;
+}
+.teaching_staff .about i, .non_teaching_staff .about i {
+  font-size: 14px;
+}
+.teaching_staff .about .description, .teaching_staff .about .designation, .non_teaching_staff .about .description, .non_teaching_staff .about .designation {
+  font-size: 13px;
+  color: #45070e;
+}
+.teaching_staff .about .description, .non_teaching_staff .about .description {
+  margin-top: 10px;
+}
+.teaching_staff .sidebar, .non_teaching_staff .sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.teaching_staff .sidebar button, .non_teaching_staff .sidebar button {
+  padding: 8px;
+  background-color: #45070e;
+  color: white;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(107, 31, 31);
+  cursor: pointer;
+}
+
+.df {
+  display: flex;
+}
+
+.dn {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 200px !important;
+  }
+  .sidebar button {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .about {
+    height: 823px !important;
+  }
+  .about img {
+    max-height: 120px;
+    border: 5px solid #d3b143;
+  }
+  .about section div {
+    padding: 20px 10px !important;
+    font-size: 13px;
+  }
+  .sidebar {
+    width: 100px !important;
+  }
+  .sidebar button {
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=staff%20copy.css.map */

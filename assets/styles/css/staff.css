@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;600;700;900&display=swap");
@@ -100,100 +101,402 @@ html body {
   align-items: center;
 }
 
-.teaching_staff, .non_teaching_staff {
+.teaching_staff,
+.non_teaching_staff {
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
 }
-.teaching_staff img, .non_teaching_staff img {
-  max-height: 200px;
+.teaching_staff img,
+.non_teaching_staff img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
   border: 5px solid #d3b143;
   border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
-.teaching_staff .about, .non_teaching_staff .about {
+.teaching_staff img:hover,
+.non_teaching_staff img:hover {
+  transform: scale(1.03);
+}
+.teaching_staff .about-container,
+.non_teaching_staff .about-container {
   flex: 1;
-  height: 583px;
-  overflow: scroll;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #45070e rgb(107, 31, 31);
 }
-.teaching_staff .about section, .non_teaching_staff .about section {
+.teaching_staff .about-container::-webkit-scrollbar,
+.non_teaching_staff .about-container::-webkit-scrollbar {
+  width: 8px;
+}
+.teaching_staff .about-container::-webkit-scrollbar-track,
+.non_teaching_staff .about-container::-webkit-scrollbar-track {
+  background: rgb(107, 31, 31);
+  border-radius: 10px;
+}
+.teaching_staff .about-container::-webkit-scrollbar-thumb,
+.non_teaching_staff .about-container::-webkit-scrollbar-thumb {
+  background-color: #45070e;
+  border-radius: 10px;
+}
+.teaching_staff .about-container section,
+.non_teaching_staff .about-container section {
   display: none;
+  padding: 10px 0;
 }
-.teaching_staff .about section:first-child, .non_teaching_staff .about section:first-child {
+.teaching_staff .about-container section.active,
+.non_teaching_staff .about-container section.active {
   display: block;
+  animation: fadeIn 0.5s ease-in-out;
 }
-.teaching_staff .about section > div, .non_teaching_staff .about section > div {
+.teaching_staff .about-container section > div,
+.non_teaching_staff .about-container section > div {
   padding: 20px 50px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(69, 7, 14, 0.1);
+  transition: transform 0.2s ease;
 }
-.teaching_staff .about section > div h2, .non_teaching_staff .about section > div h2 {
+.teaching_staff .about-container section > div:hover,
+.non_teaching_staff .about-container section > div:hover {
+  transform: translateX(5px);
+}
+.teaching_staff .about-container section > div span,
+.non_teaching_staff .about-container section > div span {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media screen and (max-width: 767px) {
+  .teaching_staff .about-container section > div span,
+  .non_teaching_staff .about-container section > div span {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    width: 100%;
+  }
+}
+.teaching_staff .about-container section > div span .text-container,
+.non_teaching_staff .about-container section > div span .text-container {
+  flex: 1;
+}
+.teaching_staff .about-container section > div h2,
+.non_teaching_staff .about-container section > div h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: black;
+  font-weight: 600;
+  border-bottom: 2px solid #d3b143;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+@media screen and (max-width: 767px) {
+  .teaching_staff .about-container section > div h2,
+  .non_teaching_staff .about-container section > div h2 {
+    text-align: center;
+    margin: 5px auto;
+    display: block;
+    width: fit-content;
+  }
+}
+.teaching_staff .about-container section .designation,
+.non_teaching_staff .about-container section .designation {
+  margin-top: 0;
+  font-size: 15px;
+  color: #2e0509;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.teaching_staff .about-container section .designation:before,
+.non_teaching_staff .about-container section .designation:before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #d3b143;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.teaching_staff .about-container section .designation b,
+.non_teaching_staff .about-container section .designation b {
+  font-weight: 700;
+  display: inline-block;
+  margin-left: 5px;
+}
+@media screen and (max-width: 767px) {
+  .teaching_staff .about-container section .designation,
+  .non_teaching_staff .about-container section .designation {
+    justify-content: center;
+    margin: 5px 0 10px;
+  }
+}
+.teaching_staff .about-container section .description,
+.non_teaching_staff .about-container section .description {
+  text-align: justify;
+  line-height: 1.6;
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(69, 7, 14, 0.2);
+  font-style: italic;
   color: #45070e;
+}
+@media screen and (max-width: 767px) {
+  .teaching_staff .about-container section .description,
+  .non_teaching_staff .about-container section .description {
+    text-align: center;
+  }
+}
+.teaching_staff .about-container section > section,
+.non_teaching_staff .about-container section > section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.teaching_staff .about-container section > section > div,
+.non_teaching_staff .about-container section > section > div {
+  background-color: rgba(107, 31, 31, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.teaching_staff .about-container section > section > div:hover,
+.non_teaching_staff .about-container section > section > div:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+.teaching_staff .about-container i,
+.non_teaching_staff .about-container i {
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(69, 7, 14, 0.8);
+}
+.teaching_staff .about-container section.about div,
+.non_teaching_staff .about-container section.about div {
+  background-color: rgba(107, 31, 31, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+.teaching_staff .about-container section.about div h2,
+.non_teaching_staff .about-container section.about div h2 {
+  font-size: 24px;
+  color: #45070e;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #d3b143;
+  padding-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+.teaching_staff .about-container section.about div p,
+.non_teaching_staff .about-container section.about div p {
+  line-height: 1.8;
+  text-align: justify;
+  color: #170205;
   font-size: 16px;
 }
-.teaching_staff .about section .description, .non_teaching_staff .about section .description {
-  text-align: justify;
-}
-.teaching_staff .about section > section, .non_teaching_staff .about section > section {
-  display: flex;
-  flex-direction: row;
-}
-.teaching_staff .about i, .non_teaching_staff .about i {
-  font-size: 14px;
-}
-.teaching_staff .about .description, .teaching_staff .about .designation, .non_teaching_staff .about .description, .non_teaching_staff .about .designation {
-  font-size: 13px;
-  color: #45070e;
-}
-.teaching_staff .about .description, .non_teaching_staff .about .description {
-  margin-top: 10px;
-}
-.teaching_staff .sidebar, .non_teaching_staff .sidebar {
+.teaching_staff .sidebar,
+.non_teaching_staff .sidebar {
   display: flex;
   flex-direction: column;
   width: 300px;
+  background-color: rgba(107, 31, 31, 0.1);
 }
-.teaching_staff .sidebar button, .non_teaching_staff .sidebar button {
-  padding: 8px;
+.teaching_staff .sidebar button,
+.non_teaching_staff .sidebar button {
+  padding: 12px 15px;
   background-color: #45070e;
   color: white;
   border: none;
   outline: none;
   border-bottom: 2px solid rgb(107, 31, 31);
   cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  position: relative;
+  text-align: left;
+}
+.teaching_staff .sidebar button:hover,
+.non_teaching_staff .sidebar button:hover {
+  background-color: #2e0509;
+  padding-left: 20px;
+}
+.teaching_staff .sidebar button.active,
+.non_teaching_staff .sidebar button.active {
+  background-color: #170205;
+  border-left: 4px solid #d3b143;
+}
+.teaching_staff .sidebar button.active:after,
+.non_teaching_staff .sidebar button.active:after {
+  content: "→";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.teaching_staff .sidebar button.about,
+.non_teaching_staff .sidebar button.about {
+  background-color: #2e0509;
+  font-weight: 600;
 }
 
-.df {
-  display: flex;
+.principal div span h2,
+.jac div span h2,
+section > div:first-of-type span h2 {
+  font-size: 22px;
+  border-bottom: 3px solid #d3b143;
+}
+.principal div span .designation,
+.jac div span .designation,
+section > div:first-of-type span .designation {
+  font-size: 16px;
+}
+.principal div span .designation:before,
+.jac div span .designation:before,
+section > div:first-of-type span .designation:before {
+  width: 10px;
+  height: 10px;
 }
 
-.dn {
-  display: none;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
+/* On tablets and below, reduce padding in the .about-container */
+@media screen and (max-width: 992px) {
+  .teaching_staff .about-container section > div,
+  .non_teaching_staff .about-container section > div {
+    padding: 20px 30px;
+  }
+}
+/* On screens 768px and below, stack sidebar on top and content below */
 @media screen and (max-width: 768px) {
-  .sidebar {
-    width: 200px !important;
+  .teaching_staff,
+  .non_teaching_staff {
+    flex-direction: column;
   }
-  .sidebar button {
-    font-size: 13px;
+  .teaching_staff .sidebar,
+  .non_teaching_staff .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .teaching_staff .sidebar button,
+  .non_teaching_staff .sidebar button {
+    flex: 1 1 auto;
+    text-align: center;
+    border-right: 1px solid rgb(107, 31, 31);
+    border-bottom: none;
+    font-size: 14px;
+  }
+  .teaching_staff .sidebar button:last-child,
+  .non_teaching_staff .sidebar button:last-child {
+    border-right: none;
+  }
+  .teaching_staff .about-container,
+  .non_teaching_staff .about-container {
+    width: 100%;
+    overflow-y: visible;
   }
 }
+/* On screens 650px and below, reduce spacing more aggressively */
+@media screen and (max-width: 650px) {
+  .teaching_staff .sidebar button,
+  .non_teaching_staff .sidebar button {
+    font-size: 13px;
+    padding: 10px 5px;
+  }
+  .teaching_staff .about-container section > div,
+  .non_teaching_staff .about-container section > div {
+    padding: 15px !important;
+  }
+}
+/* On screens 550px and below, smaller text & images */
 @media screen and (max-width: 550px) {
-  .about {
-    height: 823px !important;
+  .teaching_staff .about-container img,
+  .non_teaching_staff .about-container img {
+    max-height: 170px;
+    max-width: 150px;
   }
-  .about img {
-    max-height: 120px;
-    border: 5px solid #d3b143;
-  }
-  .about section div {
-    padding: 20px 10px !important;
+  .teaching_staff .about-container section > div,
+  .non_teaching_staff .about-container section > div {
+    text-align: center;
+    padding: 15px 10px !important;
     font-size: 13px;
   }
-  .sidebar {
-    width: 100px !important;
+  .teaching_staff .about-container section > div span,
+  .non_teaching_staff .about-container section > div span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
-  .sidebar button {
+  .teaching_staff .about-container section > div h2,
+  .non_teaching_staff .about-container section > div h2 {
+    margin: 10px auto 5px;
+    font-size: 18px;
+  }
+  .teaching_staff .about-container section > div .designation,
+  .non_teaching_staff .about-container section > div .designation {
+    justify-content: center;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  .teaching_staff .about-container section > div .designation:before,
+  .non_teaching_staff .about-container section > div .designation:before {
+    margin-bottom: 2px;
+  }
+  .teaching_staff .about-container section > div .designation b,
+  .non_teaching_staff .about-container section > div .designation b {
+    margin-left: 3px;
+  }
+  .teaching_staff .about-container section.about div,
+  .non_teaching_staff .about-container section.about div {
+    padding: 15px 10px !important;
+  }
+  .teaching_staff .about-container section.about div h2,
+  .non_teaching_staff .about-container section.about div h2 {
+    font-size: 20px;
+  }
+  .teaching_staff .about-container section.about div p,
+  .non_teaching_staff .about-container section.about div p {
+    font-size: 14px;
+  }
+  .teaching_staff .sidebar,
+  .non_teaching_staff .sidebar {
+    flex-wrap: wrap;
+  }
+  .teaching_staff .sidebar button,
+  .non_teaching_staff .sidebar button {
     font-size: 12px;
+    padding: 8px 5px;
+    min-width: 80px;
+  }
+}
+/* On screens 480px and below, final adjustments */
+@media screen and (max-width: 480px) {
+  .teaching_staff .about-container section > div,
+  .non_teaching_staff .about-container section > div {
+    padding: 10px 8px !important;
+  }
+  .teaching_staff .about-container section > div h2,
+  .non_teaching_staff .about-container section > div h2 {
+    font-size: 16px;
+  }
+  .teaching_staff .about-container .description,
+  .teaching_staff .about-container .designation,
+  .non_teaching_staff .about-container .description,
+  .non_teaching_staff .about-container .designation {
+    font-size: 13px;
   }
 }
 
