@@ -17,6 +17,8 @@
 
     <link rel="stylesheet" href="assets/styles/css/style.css?v=123">
     <link rel="stylesheet" href="assets/styles/css/chatbot.css">
+    <link rel="stylesheet" href="assets/styles/css/style.css">
+    <link rel="stylesheet" href="assets/styles/css/about.css">
 
     <script src="https://kit.fontawesome.com/7ff147d778.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -38,45 +40,16 @@
      <?php
         echo "  <a target='_new' href='https://www.facebook.com/rkinternationalschoolnarela/'><img src='".$root_directory."/assets/icons/facebook.webp' alt=''></a>
         <a target='_new' href='https://www.instagram.com/rkinternational_school/'><img src='".$root_directory."/assets/icons/insta.webp' alt=''></a>
-        <a target='_new' href='https://www.youtube.com/channel/UCtScjinZheGMl1GhGaRKiKA'><img src='".$root_directory."/assets/icons/youtube.png  ' alt=''></a>"
+        <a target='_new' href='https://www.youtube.com/channel/UCtScjinZheGMl1GhGaRKiKA'><img src='".$root_directory."/assets/icons/youtube.png  ' alt=''></a>
+        <a target='_new' href='https://x.com/rkis_narela'><img src='https://eurogen-ern.eu/wp-content/uploads/2023/08/twitter-x-logo-101C7D2420-seeklogo.com_.png' alt=''></a>"
+        
     ?>
     </div>
 
     <?php include('./components/hero_slider.php');?>
    
 
-    <div class="annoucements">
-        <p>Latest Happenings</p>  
-
-        <style>
-            marquee > div{
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-            }
-
-            marquee > div a{
-                margin-right: 10px;
-            }
-        </style>
-        <marquee behavior="smooth" direction="rtl">
-            <!-- Annoucement Text -->
-            <div>  <p >R K INTERNATIONAL SCHOOL celebrated <a href="./pages/Gallery/2022-23/Republic_Day/">- REPUBLIC DAY.</a></p>   
-            <p >R K INTERNATIONAL SCHOOL celebrated its Annual Sports Meet 2022 <a href="./pages/Gallery/2022-23/Abhyuday_2022/">- ABHIYUDAY.</a></p>
-            <p  >R K INTERNATIONAL SCHOOL celebrated <a href="./pages/Gallery/2022-23/Childrens_Day/"> Children's Day.</a></p></div>
-            <!-- <?php
-                  $directory = './latest_news';
-                  //scanning directory for images
-                  $scanned_directory = array_diff(scandir($directory), array('..', '.'));
-                //   print_r($scanned_directory);
-                  foreach ($scanned_directory as $key => $value) {
-                    echo "<img src='./latest_news/".$value."' >";
-                  }
-            ?> -->
-
-        
-        </marquee>
-    </div>
+   <?php include('./components/LatestHappenings.php');?>    
 
 
     <div class="why_rkis">
@@ -229,6 +202,7 @@
     
 
     <?php include('popup.php') ?>
+    <?php include('components/ContactUs.php') ?>
 
     
     <?php include('components/footer.php') ?>

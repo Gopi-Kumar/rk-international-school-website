@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
-    <title>Contact Us  | R K Internation School - Narela Road, Safiabad, Sonepat</title>
-
-    <link rel="stylesheet" href="../assets/styles/css/style.css">
-    <link rel="stylesheet" href="../assets/styles/css/about.css">
-
-    <script src="https://kit.fontawesome.com/7ff147d778.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-    
-</head>
-<body>
-
-    <?php include('../components/header.php') ?>
-    <div class="folder_path">       
+<div class="folder_path">       
         <p>Contact Us</p>
     </div>
 
@@ -51,17 +28,3 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.84677754018!2d77.07738647539011!3d28.873175175534097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390da947fbb1c259%3A0x650b863556e395ed!2sR%20K%20INTERNATIONAL%20SCHOOL!5e0!3m2!1sen!2sin!4v1671692880398!5m2!1sen!2sin" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     </div>
-
- 
-
-
-    
-   
-    
-    <?php include('../components/footer.php') ?>
-
-
-</body>
-
-    <script src="../assets/scripts/script.js"></script>
-</html>

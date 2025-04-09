@@ -1,7 +1,7 @@
 <?php 
     session_start();
     //  $_SERVER["root_directory"] = "";
-    $_SERVER["root_directory"] = "/School Website";
+    $_SERVER["root_directory"] = "/rk-international-school-website";
 
 
     $root_directory = $_SERVER["root_directory"];
@@ -16,7 +16,8 @@
                 <?php
                     echo "  <a target='_new' href='https://m.facebook.com/rkinternationalschoolnarela/'><img src='".$root_directory."/assets/icons/facebook.webp' alt=''></a>
                     <a target='_new' href='https://www.instagram.com/rkinternational_school/'><img src='".$root_directory."/assets/icons/insta.webp' alt=''></a>
-                    <a target='_new' href='https://www.youtube.com/channel/UCtScjinZheGMl1GhGaRKiKA'><img src='".$root_directory."/assets/icons/youtube.png  ' alt=''></a>"
+                    <a target='_new' href='https://www.youtube.com/channel/UCtScjinZheGMl1GhGaRKiKA'><img src='".$root_directory."/assets/icons/youtube.png  ' alt=''></a>
+                     <a target='_new' href='https://x.com/rkis_narela'><img src='https://eurogen-ern.eu/wp-content/uploads/2023/08/twitter-x-logo-101C7D2420-seeklogo.com_.png' alt=''></a>"
                 ?>
             </div>
 

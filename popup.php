@@ -82,7 +82,7 @@
 
 
     <!-- Change Image Location Here -->
-    <img src="pages/exam-corner/pragyan.jpg" alt="">
+    <img src="assets/popup/popup.jpeg" alt="">
 
 
     <div class="control">
@@ -95,10 +95,10 @@
 <script>
 
     let firstPopIsClosed = false;
-    let time = 30;
+    let time = 10;
     function closePopup(){
         if(!firstPopIsClosed){
-            document.querySelector(".popup img").src = "https://rkinternationalschool.net/pages/exam-corner/pragyan.jpg"
+            document.querySelector(".popup img").src = "assets/popup/popup.jpeg"
             firstPopIsClosed = true;
             time = 30;
         }else{
