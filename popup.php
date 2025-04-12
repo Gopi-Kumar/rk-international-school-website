@@ -94,43 +94,35 @@
 
 <script>
 
-    let firstPopIsClosed = false;
-    let time = 10;
-    function closePopup(){
-        if(!firstPopIsClosed){
-            document.querySelector(".popup img").src = "assets/popup/popup.jpeg"
-            firstPopIsClosed = true;
-            time = 30;
-        }else{
-            document.querySelector(".popup").style.display = "none";
-            
-        }
+let time = 10;
+let countdownInterval; // Store interval reference
 
+function closePopup(){
+    document.querySelector(".popup").style.display = "none";
+    clearInterval(countdownInterval); // Clear the interval when closing
+}
+
+function openPop(){
+    document.querySelector(".popup").style.display = "flex";
+    time = 10; // Reset timer on open
+    document.querySelector(".popup .timer span").innerText = time;
+
+    // Clear any existing intervals
+    if(countdownInterval) clearInterval(countdownInterval);
+    
+    countdownInterval = setInterval(() => {
+        time = time - 1;
+        document.querySelector(".popup .timer span").innerText = time;
         
+        if(time <= 0){
+            closePopup();
+        }
+    }, 1000);
+}
 
-    }
-
-
-    function openPop(){
-
-        document.querySelector(".popup").style.display = "flex";
-
-        //Change Popup Timer here
-        setInterval(() => {
-            time= time-1;
-            if(time==0){
-                closePopup();
-                return;
-            }
-            document.querySelector(".popup .timer span").innerText = time;
-
-        }, 1000);
-
-    }
-
-    setTimeout(() => {
-        openPop();
-    }, 4000);
+setTimeout(() => {
+    openPop();
+}, 4000);
 
  
 

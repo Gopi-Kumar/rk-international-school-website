@@ -36,6 +36,9 @@
     <?php include("database/connectdb.php"); ?>
     <?php include('components/header.php') ?>
     <?php include('components/chat-bot.php') ?>
+
+
+    
     <div class='float_social_media'>
      <?php
         echo "  <a target='_new' href='https://www.facebook.com/rkinternationalschoolnarela/'><img src='".$root_directory."/assets/icons/facebook.webp' alt=''></a>
@@ -196,10 +199,7 @@
     </div>
 
     <a href="./register.php" class="register_for_admission floating_element"><b>Admission <br> Enquiry  </b><i class="fa-solid fa-angles-right"></i></a>
-    <!--<a href="https://forms.gle/BLhaFXg7mmgLnPG1A" class="latest_event">-->
-    <!--    <img src="./pages/Latest_Event/pragyan_logo.png" alt="">-->
-    <!--</a>-->
-    
+
 
     <?php include('popup.php') ?>
     <?php include('components/ContactUs.php') ?>
