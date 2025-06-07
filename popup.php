@@ -2,6 +2,7 @@
 <style>
     .popup{
         position:fixed;
+        z-index: 1000;
         top:20px;
         left:36%;
         width:500px;

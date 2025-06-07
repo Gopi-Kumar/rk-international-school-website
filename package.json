@@ -1,0 +1,30 @@
+{
+  "name": "rk-international-school-website",
+  "version": "1.0.0",
+  "description": "RK International School Website with Enhanced Chatbot",
+  "main": "index.php",
+  "scripts": {
+    "scss": "sass --watch assets/styles/scss:assets/styles/css --style=compressed",
+    "scss:dev": "sass --watch assets/styles/scss:assets/styles/css --style=expanded --source-map",
+    "scss:build": "sass assets/styles/scss:assets/styles/css --style=compressed --no-source-map",
+    "chatbot:dev": "sass --watch assets/styles/scss/chatbot-enhanced.scss:assets/styles/css/chatbot.css --style=expanded --source-map",
+    "chatbot:build": "sass assets/styles/scss/chatbot-enhanced.scss:assets/styles/css/chatbot.css --style=compressed --no-source-map",
+    "dev": "concurrently \"npm run scss:dev\" \"php -S localhost:8000\"",
+    "build": "npm run scss:build",
+    "start": "php -S localhost:8000"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5",
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "school",
+    "education",
+    "chatbot",
+    "website",
+    "scss",
+    "php"
+  ],
+  "author": "RK International School",
+  "license": "MIT"
+}

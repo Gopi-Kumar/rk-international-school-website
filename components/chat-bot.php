@@ -1,43 +1,31 @@
 <html>
     <head>
-
+        <link rel="stylesheet" href="assets/styles/css/chatbot.css">
     </head>
     <body>
         <div class="chatbox">
             <div class="heading">
-                <img src="assets/icons/chatbot.png" alt="">
+                <img src="assets/icons/chatbot.png" alt="Chatbot">
                 <section>
-                    <h2>Virtual Assistant to RKIS</h2>
-                    <p> <img src="./assets/icons/online_bot.png" alt=""> Online</p>
-
+                    <h2>Virtual Assistant for RKIS</h2>
+                    <p><img src="./assets/icons/online_bot.png" alt=""> Online</p>
                 </section>
             </div>
             <div class="texts">
-                <!-- <div class="chatbot_txt">
-                    <p class="msg">Hellow Sir, TEsssssssddddddddstng long message that can break</p>
-                    <p class="timestamp">03:00 PM</p>
-                    <div class="chatbot_txt_tail"></div>
-                </div>
-
-                <div class="usr_txt">
-                    <p class="msg">Hellow Sir, TEsssssssddddddddstng long message that can break</p>
-                    <p class="timestamp">03:00 PM</p>
-                    <div class="usr_txt_tail"></div>
-
-                </div> -->
-               
+                <!-- Messages will be dynamically added here -->
             </div>  
             <div class="inputs">
-                <input type="text" class="usr_msg" placeholder="Reply Here...">
-                <button onclick=takeUsrInput();><i class="fa-solid fa-paper-plane"></i></button>
+                <input type="text" class="usr_msg" placeholder="Type your message here..." autocomplete="off">
+                <button onclick="takeUsrInput();" aria-label="Send message">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
             </div>
         </div>
         <div class="chatbot-handler">
-            <img src="assets/icons/chatbot.png" onclick=openChatBot(); alt="">
-            <i class="fa-solid fa-xmark" onclick=closeChatBot();></i>
+            <img src="assets/icons/chatbot.png" onclick="openChatBot();" alt="Open Chat" title="Chat with us">
+            <i class="fa-solid fa-xmark" onclick="closeChatBot();" title="Close Chat"></i>
         </div>
     </body>
 
-
-    <script src="./assets/scripts/chatbot.js"></script>
+    <script src="./assets/scripts/chatbot-improved.js"></script>
 </html>

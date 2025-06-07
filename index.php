@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="assets/styles/css/chatbot.css">
     <link rel="stylesheet" href="assets/styles/css/style.css">
     <link rel="stylesheet" href="assets/styles/css/about.css">
+    <link rel="stylesheet" href="assets/styles/css/components/our-instructors.css">
+
 
     <script src="https://kit.fontawesome.com/7ff147d778.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -120,35 +122,10 @@
                 </p>
             </div>
         </div>
-    </div>
+    </div>    
+    <?php include 'components/our-instructors.php'; ?>
 
-    
-    <section class="our_instructor">
-        <h3>Our Instructors</h3>
-        <section>   
-          <div data-aos="fade-down">
-                <img src="assets/images/management/chairman sir.png" alt="R K International School Chairman">
-                <p>Honourable Chairman</p>
-                <h3>Mr. Narender Krishan Sharma</h3>   
-            </div>
-    
-            <div>
-                <img src="assets/images/management/sunita mam.png" alt="R K International School Managing Director">
-                <p>Honourable Managing Director</p>
-                <h3>Mrs. Sunita Sharma</h3>
-            </div>
-    
-            <div>
-                <img src="assets/images/management/akash sir.png" alt="R K International School Director">
-                <p> Honourable Director</p>
-                <h3>Mr. Akash Sharma</h3>
-            </div>
-        </section>
-    </section>      
-
-
-    
-        <?php include 'components/image-slider.php';?>
+    <?php include 'components/image-slider.php'; ?>
 
 
    

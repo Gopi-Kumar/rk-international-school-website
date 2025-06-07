@@ -1,3 +1,14 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Faster+One&family=Salsa&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Acme|Alegreya|Alegreya+Sans|Anton|Archivo|Archivo+Black|Archivo+Narrow|Arimo|Arvo|Asap|Asap+Condensed|Bitter|Bowlby+One+SC|Bree+Serif|Cabin|Cairo|Catamaran|Crete+Round|Crimson+Text|Cuprum|Dancing+Script|Dosis|Droid+Sans|Droid+Serif|EB+Garamond|Exo|Exo+2|Faustina|Fira+Sans|Fjalla+One|Francois+One|Gloria+Hallelujah|Hind|Inconsolata|Indie+Flower|Josefin+Sans|Julee|Karla|Lato|Libre+Baskerville|Libre+Franklin|Lobster|Lora|Mada|Manuale|Maven+Pro|Merriweather|Merriweather+Sans|Montserrat|Montserrat+Subrayada|Mukta+Vaani|Muli|Noto+Sans|Noto+Serif|Nunito|Open+Sans|Open+Sans+Condensed:300|Oswald|Oxygen|PT+Sans|PT+Sans+Caption|PT+Sans+Narrow|PT+Serif|Pacifico|Passion+One|Pathway+Gothic+One|Play|Playfair+Display|Poppins|Questrial|Quicksand|Raleway|Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Ropa+Sans|Rubik|Saira|Saira+Condensed|Saira+Extra+Condensed|Saira+Semi+Condensed|Sedgwick+Ave|Sedgwick+Ave+Display|Shadows+Into+Light|Signika|Slabo+27px|Source+Code+Pro|Source+Sans+Pro|Spectral|Titillium+Web|Ubuntu|Ubuntu+Condensed|Varela+Round|Vollkorn|Work+Sans|Yanone+Kaffeesatz|Zilla+Slab|Zilla+Slab+Highlight");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bungee&family=Bungee+Inline&family=Bungee+Shade&family=Carter+One&family=Faster+One&family=Fredoka+One&family=Lobster&family=Monoton&family=Orbitron&family=Ramaraja&family=Rammetto+One&family=Rampart+One&family=Russo+One&family=Sancreek&family=Secular+One&family=Sigmar+One&family=Vast+Shadow&family=Zen+Tokyo+Zoo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=Alegreya+Sans+SC&family=Federo&family=Pattaya&family=Roboto+Condensed:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;600;700;900&display=swap");
@@ -525,77 +536,546 @@ header .navbar nav div:hover .dropdown {
     padding-top: 10px;
   }
 }
+.main_heading {
+  font-family: "Alfa Slab One", cursive;
+  font-family: "Bungee", cursive;
+  font-family: "Bungee Inline", cursive;
+  font-family: "Bungee Shade", cursive;
+  font-family: "Carter One", cursive;
+  font-family: "Faster One", cursive;
+  font-family: "Fredoka One", cursive;
+  font-family: "Lobster", cursive;
+  font-family: "Monoton", cursive;
+  font-family: "Orbitron", sans-serif;
+  font-family: "Ramaraja", serif;
+  font-family: "Rammetto One", cursive;
+  font-family: "Rampart One", cursive;
+  font-family: "Russo One", sans-serif;
+  font-family: "Sancreek", cursive;
+  font-family: "Secular One", sans-serif;
+  font-family: "Sigmar One", cursive;
+  font-family: "Vast Shadow", cursive;
+  font-family: "Zen Tokyo Zoo", cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  flex-wrap: wrap;
+}
+
+html {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/images/background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: fixed;
+}
+html body {
+  max-width: 2200px;
+  width: 100%;
+}
+
+.red_alert {
+  background-color: rgba(255, 0, 0, 0.575);
+  color: white;
+  font-size: 9px;
+  padding: 3px;
+  border-radius: 10px;
+  font-weight: bolder;
+  position: relative;
+  top: -5px;
+  left: -10px;
+  animation: red_alert 0.5s infinite linear;
+}
+
+.download_links {
+  display: flex;
+  flex-direction: column;
+  color: #45070e;
+  font-size: 18px;
+  padding-left: 100px;
+  min-height: 300px;
+}
+.download_links a {
+  color: #45070e;
+  margin-top: 5px;
+}
+.download_links i {
+  color: #45070e;
+  font-size: 18px;
+  padding-left: 5px;
+}
+
+@media screen and (max-width: 450px) {
+  .download_links {
+    padding-left: 30px;
+    font-family: 20px;
+  }
+  .download_links a {
+    font-size: 15px;
+  }
+}
+.info_panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .our_instructor {
   background: #45070e;
-  padding: 20px;
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.our_instructor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 25% 25%, rgba(211, 177, 67, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(211, 177, 67, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
 }
 .our_instructor > h3 {
   color: white;
-  padding: 0px 100px 20px 80px;
-  font-size: 26px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, white 0%, rgb(255, 255, 202) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 .our_instructor > h3::after {
   content: "";
   display: block;
-  width: 100px;
-  height: 3px;
-  background-color: white;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, rgb(177, 128, 25) 0%, rgb(239, 218, 102) 48%, rgb(177, 128, 25) 100%);
+  margin: 20px auto 0;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(211, 177, 67, 0.4);
 }
-.our_instructor section {
+.our_instructor > h3::before {
+  content: "★";
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d3b143;
+  font-size: 1.5rem;
+  opacity: 0.7;
+  animation: twinkle 2s ease-in-out infinite alternate;
+}
+.our_instructor > section {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.our_instructor section div {
+.our_instructor > section > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex: 1;
-  flex-wrap: wrap;
+  min-width: 280px;
+  max-width: 350px;
+  background: linear-gradient(135deg, rgba(69, 7, 14, 0.95) 0%, rgba(107, 31, 31, 0.9) 100%);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(211, 177, 67, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
-.our_instructor section div img {
-  width: 250px;
-  border-radius: 15px;
-  border: 8px solid #d3b143;
-  box-shadow: 1px 1px 20px 1px rgb(48, 0, 0);
+.our_instructor > section > div::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(211, 177, 67, 0.05) 0%, transparent 70%);
+  transform: rotate(45deg);
+  transition: transform 0.6s ease;
+  z-index: 1;
 }
-.our_instructor section div h3 {
-  color: #d3b143;
-  text-align: center;
+.our_instructor > section > div:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, rgba(69, 7, 14, 0.98) 0%, rgba(107, 31, 31, 0.95) 100%);
+  border-color: rgba(211, 177, 67, 0.6);
 }
-.our_instructor section div p {
+.our_instructor > section > div:hover::before {
+  transform: rotate(45deg) scale(1.2);
+}
+.our_instructor > section > div:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+.our_instructor > section > div:hover h3 {
+  color: rgb(220.6724137931, 194.1465517241, 108.3275862069);
+  text-shadow: 0 0 20px rgba(211, 177, 67, 0.5);
+  transform: translateY(-2px);
+}
+.our_instructor > section > div:hover p {
   color: white;
-  padding-top: 10px;
+  transform: translateY(-2px);
+}
+.our_instructor > section > div > * {
+  position: relative;
+  z-index: 2;
+}
+.our_instructor > section > div img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 6px solid #d3b143;
+  box-shadow: 0 0 30px rgba(211, 177, 67, 0.4), inset 0 0 0 4px rgba(255, 255, 255, 0.1);
+  object-fit: cover;
+  transition: all 0.4s ease;
+  margin-bottom: 25px;
+  position: relative;
+}
+.our_instructor > section > div img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 30px rgba(69, 7, 14, 0.3);
+  pointer-events: none;
+}
+.our_instructor > section > div p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  font-weight: 500;
   text-align: center;
+  margin: 15px 0 10px;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 202, 0.8) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.our_instructor > section > div h3 {
+  color: #d3b143;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  line-height: 1.2;
+  background: linear-gradient(90deg, rgb(177, 128, 25) 0%, rgb(239, 218, 102) 48%, rgb(177, 128, 25) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.our_instructor > section > div::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgb(177, 128, 25) 0%, rgb(239, 218, 102) 48%, rgb(177, 128, 25) 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  border-radius: 0 0 20px 20px;
+}
+.our_instructor > section > div:hover::after {
+  transform: scaleX(1);
 }
 
-@media screen and (max-width: 1050px) {
-  .our_instructor section div h3 {
-    font-size: 15px;
+@keyframes twinkle {
+  0% {
+    opacity: 0.4;
+    transform: translateY(-50%) scale(0.8);
   }
-  .our_instructor section div p {
-    font-size: 15px;
+  100% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
   }
 }
-@media screen and (max-width: 850px) {
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+.our_instructor section > div:nth-child(2n) img {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@media screen and (max-width: 1200px) {
+  .our_instructor {
+    padding: 50px 30px;
+  }
   .our_instructor > h3 {
-    padding: 0px 20px 20px 20px;
-    font-size: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
   }
-  .our_instructor section div {
-    padding: 10px;
+  .our_instructor > h3::before {
+    left: -40px;
+    font-size: 1.2rem;
   }
-  .our_instructor section div img {
-    width: 200px;
-    border: 5px solid #d3b143;
+  .our_instructor > section {
+    gap: 30px;
   }
-  .our_instructor section div h3 {
-    font-size: 13px;
+  .our_instructor > section > div {
+    min-width: 260px;
+    max-width: 320px;
+    padding: 35px 25px;
   }
-  .our_instructor section div p {
-    font-size: 12px;
+  .our_instructor > section > div img {
+    width: 220px;
+    height: 220px;
   }
 }
+@media screen and (max-width: 992px) {
+  .our_instructor {
+    padding: 40px 25px;
+  }
+  .our_instructor > h3 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  .our_instructor > h3::before {
+    display: none;
+  }
+  .our_instructor > h3::after {
+    width: 100px;
+    height: 3px;
+  }
+  .our_instructor > section {
+    gap: 25px;
+  }
+  .our_instructor > section > div {
+    min-width: 240px;
+    max-width: 300px;
+    padding: 30px 20px;
+  }
+  .our_instructor > section > div img {
+    width: 220px;
+    height: 220px;
+    border-width: 5px;
+  }
+  .our_instructor > section > div h3 {
+    font-size: 1.3rem;
+  }
+  .our_instructor > section > div p {
+    font-size: 0.95rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .our_instructor {
+    padding: 35px 20px;
+  }
+  .our_instructor > h3 {
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+  }
+  .our_instructor > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .our_instructor > section > div {
+    width: 100%;
+    max-width: 350px;
+    min-width: auto;
+    padding: 35px 25px;
+  }
+  .our_instructor > section > div img {
+    width: 280px;
+    height: 280px;
+  }
+  .our_instructor > section > div h3 {
+    font-size: 1.4rem;
+  }
+  .our_instructor > section > div p {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .our_instructor {
+    padding: 30px 15px;
+  }
+  .our_instructor > h3 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+  .our_instructor > h3::after {
+    width: 80px;
+    height: 3px;
+    margin-top: 15px;
+  }
+  .our_instructor > section {
+    gap: 25px;
+  }
+  .our_instructor > section > div {
+    padding: 30px 20px;
+    border-radius: 15px;
+  }
+  .our_instructor > section > div img {
+    width: 180px;
+    height: 180px;
+    border-width: 4px;
+    margin-bottom: 20px;
+  }
+  .our_instructor > section > div h3 {
+    font-size: 1.2rem;
+  }
+  .our_instructor > section > div p {
+    font-size: 0.9rem;
+    margin: 12px 0 8px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .our_instructor {
+    padding: 25px 10px;
+  }
+  .our_instructor > h3 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+  .our_instructor > section {
+    gap: 20px;
+  }
+  .our_instructor > section > div {
+    padding: 25px 15px;
+  }
+  .our_instructor > section > div img {
+    width: 150px;
+    height: 150px;
+    border-width: 3px;
+    margin-bottom: 15px;
+  }
+  .our_instructor > section > div h3 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+  }
+  .our_instructor > section > div p {
+    font-size: 0.85rem;
+    margin: 10px 0 5px;
+  }
+}
+@media print {
+  .our_instructor {
+    background: white !important;
+    color: black !important;
+    padding: 20px !important;
+  }
+  .our_instructor::before {
+    display: none;
+  }
+  .our_instructor > h3 {
+    color: black !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+  }
+  .our_instructor > h3::before, .our_instructor > h3::after {
+    display: none;
+  }
+  .our_instructor > section > div {
+    background: white !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    page-break-inside: avoid;
+  }
+  .our_instructor > section > div::before, .our_instructor > section > div::after {
+    display: none;
+  }
+  .our_instructor > section > div img {
+    filter: grayscale(100%);
+    box-shadow: none !important;
+  }
+  .our_instructor > section > div h3, .our_instructor > section > div p {
+    color: black !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    text-shadow: none !important;
+  }
+}
+@media (prefers-contrast: high) {
+  .our_instructor > section > div {
+    border-width: 3px;
+    border-color: #d3b143;
+  }
+  .our_instructor > section > div img {
+    border-width: 4px;
+  }
+  .our_instructor > section > div h3, .our_instructor > section > div p {
+    text-shadow: none;
+    background: none;
+    -webkit-text-fill-color: initial;
+  }
+  .our_instructor > section > div h3 {
+    color: #d3b143;
+  }
+  .our_instructor > section > div p {
+    color: white;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .our_instructor > section > div {
+    transition: none;
+  }
+  .our_instructor > section > div::before {
+    transition: none;
+  }
+  .our_instructor > section > div img {
+    transition: none;
+    animation: none;
+  }
+  .our_instructor > section > div h3, .our_instructor > section > div p {
+    transition: none;
+  }
+  .our_instructor > section > div:hover {
+    transform: none;
+  }
+  .our_instructor > h3::before {
+    animation: none;
+  }
+}
+.our_instructor > section > div:focus {
+  outline: 3px solid #d3b143;
+  outline-offset: 2px;
+}
+
 .dist {
   display: flex;
   flex-direction: column;

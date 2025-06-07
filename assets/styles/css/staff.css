@@ -206,7 +206,7 @@ html body {
 .non_teaching_staff .about-container section .designation {
   margin-top: 0;
   font-size: 15px;
-  color: #2e0509;
+  color: rgb(45.8486842105, 4.6513157895, 9.3026315789);
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -295,7 +295,7 @@ html body {
 .non_teaching_staff .about-container section.about div p {
   line-height: 1.8;
   text-align: justify;
-  color: #170205;
+  color: rgb(22.6973684211, 2.3026315789, 4.6052631579);
   font-size: 16px;
 }
 .teaching_staff .sidebar,
@@ -321,12 +321,12 @@ html body {
 }
 .teaching_staff .sidebar button:hover,
 .non_teaching_staff .sidebar button:hover {
-  background-color: #2e0509;
+  background-color: rgb(45.8486842105, 4.6513157895, 9.3026315789);
   padding-left: 20px;
 }
 .teaching_staff .sidebar button.active,
 .non_teaching_staff .sidebar button.active {
-  background-color: #170205;
+  background-color: rgb(22.6973684211, 2.3026315789, 4.6052631579);
   border-left: 4px solid #d3b143;
 }
 .teaching_staff .sidebar button.active:after,
@@ -339,7 +339,7 @@ html body {
 }
 .teaching_staff .sidebar button.about,
 .non_teaching_staff .sidebar button.about {
-  background-color: #2e0509;
+  background-color: rgb(45.8486842105, 4.6513157895, 9.3026315789);
   font-weight: 600;
 }
 
