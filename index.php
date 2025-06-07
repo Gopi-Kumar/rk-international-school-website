@@ -49,12 +49,11 @@
         <a target='_new' href='https://x.com/rkis_narela'><img src='https://eurogen-ern.eu/wp-content/uploads/2023/08/twitter-x-logo-101C7D2420-seeklogo.com_.png' alt=''></a>"
         
     ?>
-    </div>
-
-    <?php include('./components/hero_slider.php');?>
+    </div>    <?php include('./components/hero_slider.php');?>
    
+    <?php include('./components/pdf-flipbook.php');?>
 
-   <?php include('./components/LatestHappenings.php');?>    
+   <?php include('./components/LatestHappenings.php');?>
 
 
     <div class="why_rkis">
