@@ -1,7 +1,73 @@
 <?php
-// Load the JSON data
-$jsonData = file_get_contents('./faculty.json');
-$facultyData = json_decode($jsonData, true);
+include_once '../../components/global_variable.php';
+
+// Fetch teaching staff data from the API
+$ch = curl_init($TEACHING_STAFF_API);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($ch);
+curl_close($ch);
+
+$apiData = json_decode($response, true);
+
+// Organize staff by departments
+$departments = [];
+$about = [
+    'title' => 'About Our Faculty',
+    'description' => 'The faculty at R K International School consists of highly qualified, passionate educators who inspire and guide students to reach their full potential. Our teachers bring a wealth of experience, innovative teaching methods, and a commitment to holistic development. They foster a nurturing and intellectually stimulating environment, encouraging curiosity, creativity, and critical thinking. Through personalized attention and continuous professional growth, our faculty ensures that every student receives the support and motivation needed for academic success and personal growth.'
+];
+
+if ($apiData['success'] && !empty($apiData['staffs'])) {
+    foreach ($apiData['staffs'] as $staff) {
+        $deptName = $staff['department']['name'];
+        if (!isset($departments[$deptName])) {
+            // Create a safe CSS-compatible ID
+            $safeId = strtolower(str_replace([' ', '&', '-', '.', ',', '(', ')', "'", '"', '/', '\\', '+', '=', '@', '#', '$', '%', '^', '*', '!', '?', '<', '>', '|', '`', '~'], '_', $deptName));
+            $safeId = preg_replace('/_{2,}/', '_', $safeId); // Replace multiple underscores with single
+            $safeId = trim($safeId, '_'); // Remove leading/trailing underscores
+            
+            $departments[$deptName] = [
+                'id' => $safeId,
+                'button_text' => $deptName,
+                'members' => []
+            ];
+        }
+        
+        // Clean up image URL by removing gs:// if present
+        $imageUrl = $staff['pic'];
+        $imageUrl = str_replace('gs://', '', $imageUrl);
+        
+        $member = [
+            'name' => $staff['name'],
+            'image' => $imageUrl,
+            'designation' => $staff['position'],
+            'description' => $staff['description'],
+            'has_description' => !empty($staff['description'])
+        ];
+
+        // Special handling for Principal
+        if ($staff['position'] === 'Principal') {
+            // Add principal to both their department and a special Principal section
+            $departments['Principal'] = [
+                'id' => 'principal',
+                'button_text' => 'Principal',
+                'members' => [$member]
+            ];
+            $departments[$deptName]['head'] = $member;
+        } else {
+            // For other departments, first member becomes HOD
+            if (empty($departments[$deptName]['members'])) {
+                $member['is_hod'] = true;
+                $member['designation'] = "Head of Department - " . $member['designation'];
+            }
+            $departments[$deptName]['members'][] = $member;
+        }
+    }
+}
+
+$facultyData = [
+    'about' => $about,
+    'departments' => array_values($departments)
+];
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +89,7 @@ $facultyData = json_decode($jsonData, true);
     <link rel="stylesheet" href="../../assets/styles/css/style.css?v=1.5">
     <link rel="stylesheet" href="../../assets/styles/css/about.css?v=1.5">
     <link rel="stylesheet" href="../../assets/styles/css/career.css?v=1.5">
-    <link rel="stylesheet" href="../../assets/styles/css/staff.css?v=1.9">
+    <link rel="stylesheet" href="../../assets/styles/css/staff.css?v=2.3">
 
     <!-- FontAwesome & Animate.css -->
     <script src="https://kit.fontawesome.com/7ff147d778.js" crossorigin="anonymous"></script>
@@ -57,93 +123,22 @@ $facultyData = json_decode($jsonData, true);
             <!-- Render each department section -->
             <?php foreach ($facultyData['departments'] as $department): ?>
                 <section class="<?php echo $department['id']; ?>">
-                    <?php if ($department['id'] === 'principal' || $department['id'] === 'exam_incharge' || $department['id'] === 'jac' || $department['id'] === 'ea'): ?>
-                        <!-- Department with individual members handling -->
-                        <?php foreach ($department['members'] as $member): ?>
-                            <div>
-                                <span>
-                                    <img src="<?php echo $member['image']; ?>" alt="<?php echo $member['name']; ?>">
-                                    <div class="text-container">
-                                        <h2><?php echo $member['name']; ?></h2>
-                                        <p class="designation">Designation: <b><?php echo $member['designation']; ?></b></p>
-                                        <?php if (!empty($member['additional_responsibility'])): ?>
-                                            <p class="designation">
-                                                Additional Responsibilities:
-                                                <b><?php echo $member['additional_responsibility']; ?></b>
-                                            </p>
-                                        <?php endif; ?>
-                                    </div>
-                                </span>
-                                <?php if (!empty($member['description'])): ?>
-                                    <p class="description"><i><?php echo $member['description']; ?></i></p>
-                                <?php endif; ?>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <!-- Department with Head and team members -->
-                        <?php if (isset($department['head'])): ?>
-                            <div>
-                                <span>
-                                    <img src="<?php echo $department['head']['image']; ?>" alt="<?php echo $department['head']['name']; ?>">
-                                    <div class="text-container">
-                                        <h2><?php echo $department['head']['name']; ?></h2>
-                                        <p class="designation">
-                                            <b>Designation:</b> <?php echo $department['head']['designation']; ?>
-                                        </p>
-                                    </div>
-                                </span>
-                                <?php if (!empty($department['head']['description'])): ?>
-                                    <p class="description"><?php echo $department['head']['description']; ?></p>
-                                <?php endif; ?>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if (isset($department['featured_teacher'])): ?>
-                            <div>
-                                <span>
-                                    <img src="<?php echo $department['featured_teacher']['image']; ?>" alt="<?php echo $department['featured_teacher']['name']; ?>">
-                                    <div class="text-container">
-                                        <h2><?php echo $department['featured_teacher']['name']; ?></h2>
-                                        <p class="designation">
-                                            Designation:
-                                            <b><?php echo $department['featured_teacher']['designation']; ?></b>
-                                        </p>
-                                    </div>
-                                </span>
-                                <?php if (!empty($department['featured_teacher']['description'])): ?>
-                                    <p class="description"><?php echo $department['featured_teacher']['description']; ?></p>
-                                <?php endif; ?>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if (isset($department['members']) && count($department['members']) > 0): ?>
-                            <section>
-                                <?php foreach ($department['members'] as $member): ?>
-                                    <div>
-                                        <span>
-                                            <img src="<?php echo $member['image']; ?>" alt="<?php echo $member['name']; ?>">
-                                            <div class="text-container">
-                                                <h2><?php echo $member['name']; ?></h2>
-                                                <p class="designation">
-                                                    Designation:
-                                                    <b><?php echo $member['designation']; ?></b>
-                                                </p>
-                                                <?php if (isset($member['additional_responsibility'])): ?>
-                                                    <p class="designation">
-                                                        Additional Responsibilities:
-                                                        <b><?php echo $member['additional_responsibility']; ?></b>
-                                                    </p>
-                                                <?php endif; ?>
-                                            </div>
-                                        </span>
-                                        <?php if (!empty($member['description'])): ?>
-                                            <p class="description"><?php echo $member['description']; ?></p>
-                                        <?php endif; ?>
-                                    </div>
-                                <?php endforeach; ?>
-                            </section>
-                        <?php endif; ?>
-                    <?php endif; ?>
+                    <?php foreach ($department['members'] as $index => $member): ?>
+                        <div>
+                            <span>
+                                <img src="<?php echo $member['image']; ?>" alt="<?php echo $member['name']; ?>">
+                                <div class="text-container">
+                                    <h2><?php echo $member['name']; ?></h2>
+                                    <p class="designation">
+                                        <b><?php echo $member['designation']; ?></b>
+                                    </p>
+                                </div>
+                            </span>
+                            <?php if (!empty($member['description'])): ?>
+                                <p class="description"><?php echo $member['description']; ?></p>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
                 </section>
             <?php endforeach; ?>
         </div>

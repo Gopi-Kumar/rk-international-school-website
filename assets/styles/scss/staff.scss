@@ -1,439 +1,512 @@
 @import './utilss.scss';
 
-// -------------------------------------
-// Main Container
-// -------------------------------------
+// Staff Page Styles
 .teaching_staff,
 .non_teaching_staff {
-
-  width: 100%;
-  @include display_as_row();
-  flex-wrap: nowrap; // We'll switch to column at smaller breakpoints
-  // min-height: 600px; // Removed for responsiveness
-
-  // Teacher images: responsive sizing
-  img {
     width: 100%;
-    max-width: 200px;
-    height: auto;
-    border: 5px solid $yellow;
-    border-radius: 10px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    @include display_as_row();
+    flex-wrap: nowrap;
+    min-height: 100vh;
+    align-items: flex-start;
+    // padding: 50px $padding-left-right;
 
-    &:hover {
-      transform: scale(1.03);
-    }
-  }
-
-  // -------------------------------------
-  // About Container
-  // -------------------------------------
-  .about-container {
-    flex: 1;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: $blue $light-blue;
-
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-    &::-webkit-scrollbar-track {
-      background: $light-blue;
-      border-radius: 10px;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: $blue;
-      border-radius: 10px;
-    }
-
-    section {
-      display: none;
-      padding: 10px 0;
-
-      &.active {
-        display: block;
-        animation: fadeIn 0.5s ease-in-out;
-      }
-
-      // Each teacher/head "card"
-      > div {
-        padding: 20px 50px;
-        margin-bottom: 15px;
-        border-bottom: 1px solid rgba($blue, 0.1);
-        transition: transform 0.2s ease;
+    // Teacher images: responsive sizing
+    img {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        border: 5px solid $yellow;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        box-shadow: 0.5px 0.5px 1px $drop-shadow;
 
         &:hover {
-          transform: translateX(5px);
+            transform: scale(1.03);
         }
-
-        span {
-          display: flex;
-          align-items: center;
-          gap: 20px;
-
-          @media screen and (max-width: 767px) {
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: center;
-            width: 100%;
-          }
-
-          .text-container {
-            flex: 1;
-          }
-        }
-
-        h2 {
-          font-size: 20px;
-          margin-bottom: 5px;
-          color: darken($blue, 15%);
-          font-weight: 600;
-          border-bottom: 2px solid $yellow;
-          display: inline-block;
-          padding-bottom: 3px;
-
-          @media screen and (max-width: 767px) {
-            text-align: center;
-            margin: 5px auto;
-            display: block;
-            width: fit-content;
-          }
-        }
-      }
-
-      // Designation text
-      .designation {
-        margin-top: 0;
-        font-size: 15px;
-        color: darken($blue, 5%);
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-
-        &:before {
-          content: "";
-          display: inline-block;
-          width: 8px;
-          height: 8px;
-          background-color: $yellow;
-          border-radius: 50%;
-          margin-right: 8px;
-        }
-
-        b {
-          font-weight: 700;
-          display: inline-block;
-          margin-left: 5px;
-        }
-
-        @media screen and (max-width: 767px) {
-          justify-content: center;
-          margin: 5px 0 10px;
-        }
-      }
-
-      // Description text
-      .description {
-        text-align: justify;
-        line-height: 1.6;
-        margin-top: 12px;
-        padding-top: 8px;
-        border-top: 1px dashed rgba($blue, 0.2);
-        font-style: italic;
-        color: $blue;
-
-        @media screen and (max-width: 767px) {
-          text-align: center;
-        }
-      }
-
-      // Inner <section> that holds multiple teacher cards
-      > section {
-        // Instead of using flex, let's use a responsive grid
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
-
-        > div {
-          background-color: rgba($light-blue, 0.1);
-          border-radius: 8px;
-          padding: 15px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-          transition: all 0.3s ease;
-
-          &:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(-3px);
-          }
-        }
-      }
     }
 
-    i {
-      font-size: 14px;
-      font-style: italic;
-      color: rgba($blue, 0.8);
+    // Sidebar Styles
+    .sidebar {
+        @include display_as_column();
+        width: 300px;
+        background-color: rgba($light-blue, 0.1);
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 10;
+
+        button {
+            padding: 12px 15px;
+            background-color: $blue;
+            color: white;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid $light-blue;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            position: relative;
+            text-align: left;
+
+            &:hover {
+                background-color: darken($blue, 5%);
+                padding-left: 20px;
+            }
+
+            &.active {
+                background-color: darken($blue, 10%);
+                border-left: 4px solid $yellow;
+
+                &:after {
+                    content: '→';
+                    position: absolute;
+                    right: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            &.about {
+                background-color: darken($blue, 5%);
+                font-weight: 600;
+            }
+        }
     }
 
-    // About section styling
-    section.about {
+    // Main Content Container
+    .about-container {
+        flex: 1;
+        height: 100vh;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: $blue $light-blue;
+        padding: 20px 0;
 
-      div {
-        background-color: rgba($light-blue, 0.05);
-        border-radius: 10px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-
-        h2 {
-          font-size: 24px;
-          color: $blue;
-          margin-bottom: 15px;
-          border-bottom: 3px solid $yellow;
-          padding-bottom: 10px;
-          display: block;
-          text-align: center;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background: $light-blue;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $blue;
+            border-radius: 10px;
         }
 
-        p {
-          line-height: 1.8;
-          text-align: justify;
-          color: darken($blue, 10%);
-          font-size: 16px;
+        section {
+            display: none;
+            padding: 10px 0;
+
+            &.active {
+                display: block;
+                animation: fadeIn 0.5s ease-in-out;
+            }
+
+            // Each teacher/head "card"
+            > div {
+                padding: 15px 25px;
+                margin-bottom: 10px;
+                border-bottom: 1px solid rgba($blue, 0.1);
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: translateX(5px);
+                }
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
+                    @media screen and (max-width: 767px) {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        text-align: center;
+                        width: 100%;
+                    }
+
+                    .text-container {
+                        flex: 1;
+                    }
+                }
+
+                h2 {
+                    font-size: 20px;
+                    margin-bottom: 5px;
+                    color: darken($blue, 15%);
+                    font-weight: 600;
+                    border-bottom: 2px solid $yellow;
+                    display: inline-block;
+                    padding-bottom: 3px;
+
+                    @media screen and (max-width: 767px) {
+                        text-align: center;
+                        margin: 5px auto;
+                        display: block;
+                        width: fit-content;
+                    }
+                }
+            }
+
+            // Designation text
+            .designation {
+                margin-top: 0;
+                font-size: 15px;
+                color: darken($blue, 5%);
+                font-weight: 500;
+                display: flex;
+                align-items: center;
+
+                &:before {
+                    content: "";
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    background-color: $yellow;
+                    border-radius: 50%;
+                    margin-right: 8px;
+                }
+
+                b {
+                    font-weight: 700;
+                    display: inline-block;
+                    margin-left: 5px;
+                }
+
+                @media screen and (max-width: 767px) {
+                    justify-content: center;
+                    margin: 5px 0 10px;
+                }
+            }
+
+            // Description text
+            .description {
+                text-align: justify;
+                line-height: 1.6;
+                margin-top: 12px;
+                padding-top: 8px;
+                border-top: 1px dashed rgba($blue, 0.2);
+                font-style: italic;
+                color: $blue;
+
+                @media screen and (max-width: 767px) {
+                    text-align: center;
+                }
+            }
+
+            // Inner <section> that holds multiple teacher cards
+            > section {
+                // Instead of using flex, let's use a responsive grid
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 15px;
+
+                > div {
+                    background-color: rgba($light-blue, 0.1);
+                    border-radius: 8px;
+                    padding: 12px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                        transform: translateY(-3px);
+                    }
+                }
+            }
         }
-      }
+
+        i {
+            font-size: 14px;
+            font-style: italic;
+            color: rgba($blue, 0.8);
+        }
+
+        // About section styling
+        section.about {
+            div {
+                background-color: rgba($light-blue, 0.05);
+                border-radius: 10px;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+
+                h2 {
+                    font-size: 24px;
+                    color: $blue;
+                    margin-bottom: 15px;
+                    border-bottom: 3px solid $yellow;
+                    padding-bottom: 10px;
+                    display: block;
+                    text-align: center;
+                }
+
+                p {
+                    line-height: 1.8;
+                    text-align: justify;
+                    color: darken($blue, 10%);
+                    font-size: 16px;
+                }
+            }
+        }
     }
-  }
-
-  // -------------------------------------
-  // Sidebar (buttons)
-  // -------------------------------------
-  .sidebar {
-
-    @include display_as_column();
-    width: 300px;
-    background-color: rgba($light-blue, 0.1);
-
-    button {
-
-      padding: 12px 15px;
-      background-color: $blue;
-      color: white;
-      border: none;
-      outline: none;
-      border-bottom: 2px solid $light-blue;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-weight: 500;
-      position: relative;
-      text-align: left;
-
-      &:hover {
-        background-color: darken($blue, 5%);
-        padding-left: 20px;
-      }
-
-      &.active {
-        background-color: darken($blue, 10%);
-        border-left: 4px solid $yellow;
-
-        &:after {
-          content: '→';
-          position: absolute;
-          right: 15px;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-      }
-
-      &.about {
-        background-color: darken($blue, 5%);
-        font-weight: 600;
-      }
-    }
-  }
 }
 
-// -------------------------------------
 // Special styling for principal/heads
-// -------------------------------------
-
 .principal div span,
 .jac div span,
 section > div:first-of-type span {
-  h2 {
-    font-size: 22px;
-    border-bottom: 3px solid $yellow;
-  }
-
-  .designation {
-    font-size: 16px;
-
-    &:before {
-      width: 10px;
-      height: 10px;
+    h2 {
+        font-size: 22px;
+        border-bottom: 3px solid $yellow;
     }
-  }
+
+    .designation {
+        font-size: 16px;
+
+        &:before {
+            width: 10px;
+            height: 10px;
+        }
+    }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-// -------------------------------------
 // Responsive Breakpoints
-// -------------------------------------
-
 /* On tablets and below, reduce padding in the .about-container */
 @media screen and (max-width: 992px) {
-  .teaching_staff,
-  .non_teaching_staff {
-    .about-container section > div {
-      padding: 20px 30px;
+    .teaching_staff,
+    .non_teaching_staff {
+        padding: 30px 25px;
+        
+        .about-container section > div {
+            padding: 15px 20px;
+        }
     }
-  }
 }
 
 /* On screens 768px and below, stack sidebar on top and content below */
 @media screen and (max-width: 768px) {
-  .teaching_staff,
-  .non_teaching_staff {
-    flex-direction: column; // Sidebar on top, content below
+    .teaching_staff,
+    .non_teaching_staff {
+        flex-direction: column;
+        padding: 20px 15px;
+        min-height: auto;
 
-    .sidebar {
-      width: 100%;
-      flex-direction: row;
-      flex-wrap: wrap;
+        .sidebar {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            height: auto;
+            z-index: 100;
+            @include display_as_row();
+            flex-wrap: wrap;
+            background-color: rgba($light-blue, 0.15);
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+            gap: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            
+            button {
+                flex: 1 1 calc(33.33% - 6px);
+                min-width: 100px;
+                margin: 0;
+                padding: 6px 8px;
+                font-size: 11px;
+                text-align: center;
+                border-radius: 4px;
+                border: 1px solid rgba($blue, 0.3);
+                background-color: $blue;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
 
-      button {
-        flex: 1 1 auto;
-        text-align: center;
-        border-right: 1px solid $light-blue;
-        border-bottom: none;
-        font-size: 14px;
+                &:hover {
+                    background-color: darken($blue, 3%);
+                    transform: scale(1.02);
+                    padding-left: 8px;
+                }
 
-        &:last-child {
-          border-right: none;
+                &.active {
+                    background-color: darken($blue, 8%);
+                    border: 2px solid $yellow;
+                    font-weight: 600;
+                    color: white;
+                }
+                
+                &.about {
+                    flex: 1 1 100%;
+                    background-color: darken($blue, 5%);
+                }
+            }
         }
-      }
-    }
 
-    .about-container {
-      width: 100%;
-      overflow-y: visible; // Let it grow naturally
+        .about-container {
+            width: 100%;
+            height: auto;
+            overflow-y: visible;
+            
+            section > div {
+                padding: 15px 20px;
+                margin-bottom: 10px;
+            }
+        }
     }
-  }
 }
 
 /* On screens 650px and below, reduce spacing more aggressively */
 @media screen and (max-width: 650px) {
-  .teaching_staff,
-  .non_teaching_staff {
-    .sidebar {
-      button {
-        font-size: 13px;
-        padding: 10px 5px;
-      }
-    }
+    .teaching_staff,
+    .non_teaching_staff {
+        padding: 20px 15px;
+        
+        .sidebar {
+            padding: 8px;
+            max-height: 140px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            
+            button {
+                font-size: 10px;
+                padding: 6px 8px;
+                margin: 1px 0;
+                flex: 1 1 calc(33.33% - 4px);
+                min-width: 80px;
+            }
+        }
 
-    .about-container {
-      section > div {
-        padding: 15px !important;
-      }
+        .about-container {
+            section > div {
+                padding: 15px !important;
+            }
+        }
     }
-  }
 }
 
 /* On screens 550px and below, smaller text & images */
 @media screen and (max-width: 550px) {
-  .teaching_staff,
-  .non_teaching_staff {
-    .about-container {
-      img {
-        max-height: 170px;
-        max-width: 150px;
-
-      }
-
-      section > div {
-        text-align: center;
-        padding: 15px 10px !important;
-        font-size: 13px;
-
-        span {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 100%;
+    .teaching_staff,
+    .non_teaching_staff {
+        .sidebar {
+            max-height: 120px;
+            padding: 6px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            
+            button {
+                font-size: 9px;
+                padding: 5px 6px;
+                margin: 1px 0;
+                flex: 1 1 calc(33.33% - 3px);
+                min-width: 70px;
+            }
         }
 
-        h2 {
-          margin: 10px auto 5px;
-          font-size: 18px;
-        }
+        .about-container {
+            img {
+                max-height: 170px;
+                max-width: 150px;
+            }
 
-        .designation {
-          justify-content: center;
-          font-size: 14px;
-          flex-wrap: wrap;
+            section > div {
+                text-align: center;
+                padding: 15px 10px !important;
+                font-size: 13px;
 
-          &:before {
-            margin-bottom: 2px;
-          }
-          b {
-            margin-left: 3px;
-          }
-        }
-      }
+                span {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                }
 
-      section.about div {
-        padding: 15px 10px !important;
+                h2 {
+                    margin: 10px auto 5px;
+                    font-size: 18px;
+                }
 
-        h2 {
-          font-size: 20px;
+                .designation {
+                    justify-content: center;
+                    font-size: 14px;
+                    flex-wrap: wrap;
+
+                    &:before {
+                        margin-bottom: 2px;
+                    }
+                    b {
+                        margin-left: 3px;
+                    }
+                }
+            }
+
+            section.about div {
+                padding: 15px 10px !important;
+
+                h2 {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
         }
-        p {
-          font-size: 14px;
-        }
-      }
     }
-
-    .sidebar {
-      // If you want them to wrap, keep as-is:
-      flex-wrap: wrap;
-
-      button {
-        font-size: 12px;
-        padding: 8px 5px;
-        min-width: 80px;
-      }
-    }
-  }
 }
 
 /* On screens 480px and below, final adjustments */
 @media screen and (max-width: 480px) {
-  .teaching_staff,
-  .non_teaching_staff {
-    .about-container {
-      section > div {
-        padding: 10px 8px !important;
-
-        h2 {
-          font-size: 16px;
+    .teaching_staff,
+    .non_teaching_staff {
+        .sidebar {
+            max-height: 100px;
+            padding: 4px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            
+            button {
+                font-size: 8px;
+                padding: 4px 5px;
+                margin: 1px 0;
+                flex: 1 1 calc(25% - 2px);
+                min-width: 60px;
+                line-height: 1.2;
+            }
+            
+            button.about {
+                flex: 1 1 100%;
+                font-size: 9px;
+            }
         }
-      }
+    
+        .about-container {
+            section > div {
+                padding: 10px 8px !important;
 
-      .description,
-      .designation {
-        font-size: 13px;
-      }
+                h2 {
+                    font-size: 16px;
+                }
+            }
+
+            .description,
+            .designation {
+                font-size: 13px;
+            }
+        }
     }
-  }
 }

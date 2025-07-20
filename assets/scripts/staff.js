@@ -3,6 +3,61 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarButtons = document.querySelectorAll('.sidebar button');
     const sections = document.querySelectorAll('.about-container > section');
     
+    // Function to show a specific section
+    function showSection(targetId) {
+        // Hide all sections
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+        
+        // Remove active class from all buttons
+        sidebarButtons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Show the target section
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+        }
+        
+        // Add active class to the clicked button
+        const activeButton = document.querySelector(`button[onclick="showSection('${targetId}')"]`);
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+    }
+    
+    // Make showSection available globally
+    window.showSection = showSection;
+    
+    // Show the first section by default (About)
+    if (sections.length > 0) {
+        sections[0].classList.add('active');
+        if (sidebarButtons.length > 0) {
+            sidebarButtons[0].classList.add('active');
+        }
+    }
+});
+            } else {
+                buttonsContainer.style.maxHeight = '200px';
+                toggleButton.innerHTML = '✕ Hide Menu';
+                toggleButton.style.borderRadius = '8px 8px 0 0';
+            }
+        });
+        
+        // Update toggle button text when department is selected
+        sidebarButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                setTimeout(() => {
+                    buttonsContainer.style.maxHeight = '0px';
+                    toggleButton.innerHTML = `📋 ${this.textContent}`;
+                    toggleButton.style.borderRadius = '8px';
+                }, 300);
+            });
+        });
+    }
+    
     // Function to show selected section
     window.show_teacher = function(element) {
         // Hide all sections
@@ -25,10 +80,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         element.classList.add('active');
         
-        // Scroll to top of content on mobile
-        if (window.innerWidth <= 650) {
-            const aboutContainer = document.querySelector('.about-container');
+        // Scroll to top of content area
+        const aboutContainer = document.querySelector('.about-container');
+        if (aboutContainer) {
             aboutContainer.scrollTop = 0;
+        }
+        
+        // On mobile, also scroll the page to show content and add a small delay for better UX
+        if (window.innerWidth <= 768) {
+            setTimeout(() => {
+                aboutContainer.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }, 100);
         }
     };
     
